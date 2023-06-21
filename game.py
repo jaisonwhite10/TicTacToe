@@ -143,7 +143,7 @@ class TicTacToe:
                             else:
                                 self.player2score += 1
                         self.game = False
-            if turn >= 10 and self.game == True:
+            if turn > 10 and self.game == True:
                 print('tie')
                 self.winner = None
                 self.game = False
@@ -153,11 +153,14 @@ class TicTacToe:
             if result['First'] == player1:
                 if turn % 2 == 0:
                     self.computer(turn)
+
                 else:
+                    print(f"{player1}'S TURN")
                     choice = input('choose a position ')
                     self.player(choice, turn)
             else:
                 if turn % 2 == 0:
+                    print(f"{player1}'S TURN")
                     choice = input('choose a position ')
                     self.player(choice, turn)
                 else:
@@ -170,16 +173,20 @@ class TicTacToe:
         while self.game:
             if result['First'] == player1:
                 if turn % 2 == 0:
+                    print(f"{player2}'S TURN")
                     player_2_choice = input('choose a position ')
                     self.player(player_2_choice, turn)
                 else:
+                    print(f"{player1}'S TURN")
                     choice = input('choose a position ')
                     self.player(choice, turn)
             else:
                 if turn % 2 == 0:
+                    print(f"{player1}'S TURN")
                     choice = input('choose a position ')
                     self.player(choice, turn)
                 else:
+                    print(f"{player2}'S TURN")
                     player_2_choice = input('choose a position ')
                     self.player(player_2_choice, turn)
             turn += 1
